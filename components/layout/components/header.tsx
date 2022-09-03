@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
+
+import { PageLink } from "@components/page-link";
 
 import { COLORS } from "@styles/color";
 
-import { PageLink } from "@components/page-link";
 import { cssContent, Theme } from "@styles/theme";
 
 const Wrapper = styled.header<{ isSticky: boolean }>`
@@ -33,19 +34,19 @@ const Content = styled.div`
 
 export const Header = () => {
 	const [isSticky, setIsSticky] = useState(false);
-	const checkScroll = useRef(() => {
+	const checkScroll = useCallback(() => {
 		const top = document.documentElement.scrollTop || document.body.scrollTop;
 
 		setIsSticky(!!top);
-	});
+	}, []);
 
 	useEffect(() => {
-		window.addEventListener("scroll", checkScroll.current);
+		window.addEventListener("scroll", checkScroll);
 
 		return () => {
-			window.removeEventListener("scroll", checkScroll.current);
+			window.removeEventListener("scroll", checkScroll);
 		};
-	}, []);
+	}, [checkScroll]);
 
 	return (
 		<Wrapper className={isSticky ? "sticky" : ""} isSticky={isSticky}>
