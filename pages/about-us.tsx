@@ -6,6 +6,7 @@ import { SubPageLayout } from "@components/sub-page-layout";
 import { COLORS } from "@styles/color";
 
 import { cssContent, Theme } from "@styles/theme";
+import Head from "next/head";
 
 const Wrapper = styled.div`
 	background-color: ${COLORS.onyxOpacity};
@@ -21,7 +22,11 @@ const Content = styled.div`
 
 const AboutUs: NextPage = () => {
 	return (
-		<SubPageLayout title="ABOUT US" subtitle="Here we start us journey">
+		<SubPageLayout title="ABOUT US" subtitle="Here we start our journey">
+			<Head>
+				<title>About us</title>
+				<meta name="description" content="About us" />
+			</Head>
 			<Wrapper>
 				<Content>
 					<Theme.Paragraph>

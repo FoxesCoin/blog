@@ -1,4 +1,5 @@
-import { NextPage } from "next";
+import type { NextPage } from "next";
+import Head from "next/head";
 
 import { SubPageLayout } from "@components/sub-page-layout";
 
@@ -6,9 +7,12 @@ const TagList: NextPage = () => {
 	return (
 		<SubPageLayout
 			title="CATEGORIES"
-			subtitle="Maybe you search something specific?"
+			subtitle="Maybe you search for something specific?"
 		>
-			<p></p>
+			<Head>
+				<title>Tag list</title>
+				<meta name="description" content="Tag list" />
+			</Head>
 		</SubPageLayout>
 	);
 };
