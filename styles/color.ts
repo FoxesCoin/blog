@@ -10,6 +10,8 @@ export const COLORS = <const>{
 	onyxOpacity: "rgba(59, 59, 60, 0.7)",
 
 	camel: "#a98b69",
+
+	lightBlue: "#AED3E3",
 };
 
 export type Color = keyof typeof COLORS;

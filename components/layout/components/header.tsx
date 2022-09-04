@@ -8,7 +8,6 @@ import { COLORS } from "@styles/color";
 import { cssContent, Theme } from "@styles/theme";
 
 const Wrapper = styled.header<{ isSticky: boolean }>`
-	padding: 2rem 4rem;
 	top: 0;
 	position: absolute;
 	width: 100%;
@@ -16,11 +15,12 @@ const Wrapper = styled.header<{ isSticky: boolean }>`
 	background-color: ${COLORS.transparent};
 	transition: all 0.3s;
 
+	padding: 2rem 0;
+
 	&.sticky {
 		position: fixed;
 		background-color: ${COLORS.black};
-		padding-top: 1rem;
-		padding-bottom: 1rem;
+		padding: 1rem 0;
 	}
 `;
 
