@@ -1,9 +1,17 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 
 import { SubPageLayout } from "@components/sub-page-layout";
 
-const TagList: NextPage = () => {
+import { getTags } from "@utils/api";
+
+import type { Tag } from "@utils/api/tag";
+
+interface Props {
+	tags: Tag[];
+}
+
+const TagList: NextPage<Props> = (props) => {
 	return (
 		<SubPageLayout
 			title="CATEGORIES"
@@ -15,6 +23,16 @@ const TagList: NextPage = () => {
 			</Head>
 		</SubPageLayout>
 	);
+};
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+	const tags = await getTags();
+
+	return {
+		props: {
+			tags,
+		},
+	};
 };
 
 export default TagList;

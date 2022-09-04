@@ -10,13 +10,13 @@ import Head from "next/head";
 
 const Wrapper = styled.div`
 	background-color: ${COLORS.onyxOpacity};
-	padding: 4rem;
+	padding: 4rem 0;
 `;
 const Content = styled.div`
 	${cssContent}
 
 	& > * + * {
-		margin-top: 1rem;
+		margin-top: 2rem;
 	}
 `;
 
