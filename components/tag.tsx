@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Theme } from "@styles/theme";
 
 import type { RElement } from "@typings/react";
-import type { Tag as TagData } from "@utils/api/tag";
+import type { TagData } from "@utils/api/tag";
 
 const Wrapper = styled(Theme.FlexColumnCenter)<{ background: string }>`
 	background-color: ${COLORS.deepBlack};

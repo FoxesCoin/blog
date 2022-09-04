@@ -69,4 +69,12 @@ export const Theme = {
     ${cssFullSize}
     flex-direction: column;
 	`,
+	Grid: styled.main`
+		display: grid;
+		row-gap: 3rem;
+		column-gap: 2rem;
+		grid-template-columns: repeat(auto-fit, 300px);
+		grid-auto-rows: 300px;
+		justify-content: center;
+	`,
 };

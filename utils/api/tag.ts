@@ -1,11 +1,11 @@
-export interface Tag {
+export interface TagData {
 	id: number;
 	name: string;
 	subtitle: string;
 	background: string;
 }
 
-export const TAGS: Tag[] = [
+export const TAGS: TagData[] = [
 	{
 		id: 1,
 		name: "HISTORY",
