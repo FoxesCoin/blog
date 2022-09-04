@@ -19,7 +19,7 @@ const Wrapper = styled.header<{ isSticky: boolean }>`
 
 	&.sticky {
 		position: fixed;
-		background-color: ${COLORS.black};
+		background-color: ${COLORS.deepBlack};
 		padding: 1rem 0;
 	}
 `;

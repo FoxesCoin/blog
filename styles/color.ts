@@ -4,6 +4,7 @@ export const COLORS = <const>{
 	white: "#fff",
 	cultured: "#fcfafa",
 
+	deepBlack: "#000",
 	black: "#282828",
 
 	onyx: "#3b3c3c",
