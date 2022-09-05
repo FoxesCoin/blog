@@ -1,3 +1,5 @@
+import differenceInMilliseconds from "date-fns/differenceInMilliseconds";
+
 import { ARTICLES } from "./article";
 import { AUTHORS } from "./author";
 import { TAGS } from "./tag";
@@ -42,9 +44,22 @@ export const getArticles = async () => {
 				},
 			};
 		}
+	).sort((first, second) =>
+		differenceInMilliseconds(
+			new Date(second.dateCreate),
+			new Date(first.dateCreate)
+		)
 	);
 
 	return articles;
+};
+
+export const searchArticles = async (search: string) => {
+	const articles = await getArticles();
+
+	return articles.filter((article) =>
+		article.title.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+	);
 };
 
 export const getTags = async () => TAGS;

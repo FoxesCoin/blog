@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { COLORS } from "@styles/color";
 
-import { cssRound } from "@styles/theme";
+import { cssRound, cssSquare } from "@styles/theme";
 
 const Content = styled.div`
 	background-color: ${COLORS.deepBlack};
@@ -32,9 +32,9 @@ export const AuthorListItemStyled = {
 	Wrapper: styled.div`
 		position: relative;
 		background-color: ${COLORS.transparent};
-		width: 300px;
-		height: 300px;
 		cursor: pointer;
+
+		${cssSquare(300)}
 
 		&:hover {
 			& ${Logo} {

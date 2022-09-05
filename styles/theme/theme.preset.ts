@@ -1,5 +1,6 @@
 import { css } from "styled-components";
 
+import { Color, COLORS } from "@styles/color";
 import { FontSize, FONT_SIZES } from "@styles/font-size";
 import { MEDIA } from "@styles/media";
 
@@ -9,6 +10,7 @@ interface Flex {
 
 export interface Typography {
 	fontSize?: FontSize;
+	color?: Color;
 }
 
 export const cssGap = css<Flex>`
@@ -16,8 +18,9 @@ export const cssGap = css<Flex>`
 `;
 
 export const cssText = css<Typography>(
-	({ fontSize }) => `
+	({ fontSize, color }) => `
   ${fontSize ? `font-size: ${FONT_SIZES[fontSize]};` : ""}
+  ${color ? `color: ${COLORS[color]};` : ""}
   `
 );
 
@@ -32,9 +35,13 @@ export const cssFullSize = css`
 	width: 100%;
 `;
 
-export const cssRound = (size: number) => css`
+export const cssSquare = (size: number) => css`
 	width: ${size}px;
 	height: ${size}px;
+`;
+
+export const cssRound = (size: number) => css`
+	${cssSquare(size)}
 	border-radius: 50%;
 `;
 

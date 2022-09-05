@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { cssContent, Theme } from "@styles/theme";
+import { cssContent, cssSquare, Theme } from "@styles/theme";
 
 import { COLORS } from "@styles/color";
 import GitHub from "public/image/github.svg";
@@ -16,13 +16,11 @@ const Wrapper = styled.footer`
 const Link = styled.a`
 	&,
 	& > svg {
-		width: 50px;
-		height: 50px;
+		${cssSquare(50)}
 	}
 
 	& > svg {
-		width: 40px;
-		height: 40px;
+		${cssSquare(40)}
 		border-radius: 50%;
 		padding: 5px;
 
