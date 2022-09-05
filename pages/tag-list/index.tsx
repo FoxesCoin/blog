@@ -2,7 +2,7 @@ import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 
 import { SubPageLayout } from "@components/sub-page-layout";
-import { Tag } from "@components/tag";
+import { TagListItem } from "./tag-list-item";
 
 import { getTags } from "@utils/api";
 
@@ -27,7 +27,7 @@ const TagList: NextPage<Props> = (props) => {
 			</Head>
 			<Theme.Grid>
 				{tags.map((tag) => (
-					<Tag key={tag.id} {...tag} />
+					<TagListItem key={tag.id} {...tag} />
 				))}
 			</Theme.Grid>
 		</SubPageLayout>

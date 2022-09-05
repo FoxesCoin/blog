@@ -21,13 +21,6 @@ export const cssText = css<Typography>(
   `
 );
 
-export const cssAbsoluteCentralize = css`
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-`;
-
 export const cssFlexCenter = css`
 	display: flex;
 	justify-content: center;
@@ -37,22 +30,6 @@ export const cssFlexCenter = css`
 export const cssFullSize = css`
 	min-height: 100%;
 	width: 100%;
-`;
-
-export const cssFullSizeAbsolute = css`
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	position: absolute;
-`;
-
-export const cssFullScreenFixed = css`
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	position: fixed;
 `;
 
 export const cssRound = (size: number) => css`
@@ -69,5 +46,10 @@ export const cssContent = css`
 	${MEDIA.LAPTOP} {
 		padding-right: 4rem;
 		padding-left: 4rem;
+	}
+
+	${MEDIA.SMARTPHONE} {
+		padding-right: 2rem;
+		padding-left: 2rem;
 	}
 `;

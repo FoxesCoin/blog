@@ -5,6 +5,7 @@ import { Theme } from "@styles/theme";
 
 import type { RElement } from "@typings/react";
 import type { TagData } from "@utils/api/tag";
+import Link from "next/link";
 
 const Wrapper = styled(Theme.FlexColumnCenter)<{ background: string }>`
 	background-color: ${COLORS.deepBlack};
@@ -27,13 +28,15 @@ const Wrapper = styled(Theme.FlexColumnCenter)<{ background: string }>`
 	}
 `;
 
-export const Tag: RElement<TagData> = (props) => {
-	const { className, name, subtitle, background } = props;
+export const TagListItem: RElement<TagData> = (props) => {
+	const { className, name, subtitle, background, id } = props;
 
 	return (
-		<Wrapper className={className} background={background}>
-			<Theme.Title fontSize="title">{name}</Theme.Title>
-			<Theme.Title fontSize="subtitle">{subtitle}</Theme.Title>
-		</Wrapper>
+		<Link href={`/posts?tag=${id}`}>
+			<Wrapper className={className} background={background}>
+				<Theme.Title fontSize="title">{name}</Theme.Title>
+				<Theme.Title fontSize="subtitle">{subtitle}</Theme.Title>
+			</Wrapper>
+		</Link>
 	);
 };

@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 
-import { PageLink } from "@components/page-link";
+import { StyledLink } from "@components/styled-link";
 
 import { COLORS } from "@styles/color";
+import { Z_INDEX } from "@styles/z-index";
 
 import { cssContent, Theme } from "@styles/theme";
 
@@ -15,12 +16,15 @@ const Wrapper = styled.header<{ isSticky: boolean }>`
 	background-color: ${COLORS.transparent};
 	transition: all 0.3s;
 
-	padding: 2rem 0;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	z-index: ${Z_INDEX.topBar};
 
 	&.sticky {
 		position: fixed;
 		background-color: ${COLORS.deepBlack};
-		padding: 1rem 0;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
 	}
 `;
 
@@ -51,11 +55,11 @@ export const Header = () => {
 	return (
 		<Wrapper className={isSticky ? "sticky" : ""} isSticky={isSticky}>
 			<Content>
-				<PageLink href="/" text="BLOG" fontSize="header" />
+				<StyledLink href="/" text="BLOG" fontSize="header" />
 				<Theme.GapRow gap={32}>
-					<PageLink href="/about-us" text="ABOUT US" />
-					<PageLink href="/author-list" text="AUTHOR LIST" />
-					<PageLink href="/tag-list" text="TAG LIST" />
+					<StyledLink href="/about-us" text="ABOUT US" />
+					<StyledLink href="/author-list" text="AUTHOR LIST" />
+					<StyledLink href="/tag-list" text="TAG LIST" />
 				</Theme.GapRow>
 			</Content>
 		</Wrapper>

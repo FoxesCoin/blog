@@ -23,7 +23,7 @@ const Text = styled.span<{ fontSize: FontSize }>`
 	}
 `;
 
-export const PageLink: RElement<Props> = (props) => {
+export const StyledLink: RElement<Props> = (props) => {
 	const { className, href, text, fontSize = "small" } = props;
 
 	return (
