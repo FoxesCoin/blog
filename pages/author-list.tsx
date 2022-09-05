@@ -2,7 +2,7 @@ import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 
 import { SubPageLayout } from "@components/sub-page-layout";
-import { AuthorListItem } from "./author-list-item";
+import { AuthorListItem } from "@page.components/author-list";
 
 import { getAuthors } from "@utils/api";
 

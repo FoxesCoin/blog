@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Layout } from "./layout";
+import { Layout } from "../layout";
 import { SubPageHeader, SubPageHeaderProps } from "./sub-page-header";
 
 import { COLORS } from "@styles/color";

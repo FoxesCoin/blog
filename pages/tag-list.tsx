@@ -2,7 +2,7 @@ import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 
 import { SubPageLayout } from "@components/sub-page-layout";
-import { TagListItem } from "./tag-list-item";
+import { TagListItem } from "@page.components/tag-list";
 
 import { getTags } from "@utils/api";
 
