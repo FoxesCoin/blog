@@ -1,6 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { COLORS } from '@styles/color';
 import { FONT_FAMILY, FONT_SIZES } from '@styles/font';
 
 import { cssFlexCenter } from '@styles/theme';
@@ -28,7 +27,6 @@ export const SubPageHeaderStyled = {
     ${cssFlexCenter}
     height: 360px;
     flex-direction: column;
-    background-color: ${COLORS.deepBlack};
   `,
   Title: styled.h1`
     text-align: center;

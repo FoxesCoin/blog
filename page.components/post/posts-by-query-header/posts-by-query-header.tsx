@@ -6,13 +6,14 @@ import type { RWrapper } from '@typings/react';
 
 interface Props {
   posts: number;
+  background: string;
 }
 
 export const PostsByQueryHeader: RWrapper<Props> = (props) => {
-  const { className, posts, children } = props;
+  const { className, posts, children, background } = props;
 
   return (
-    <Styled.Wrapper className={className}>
+    <Styled.Wrapper src={background} className={className}>
       <Styled.Content>
         {children}
         <PostCounter counter={posts} />

@@ -23,6 +23,7 @@ const TagList: NextPage<Props> = (props) => {
   const { tags } = props;
   return (
     <StyledLayout
+      background="/image/background/tag-list.jpg"
       title="CATEGORIES"
       subtitle="Maybe you search for something specific?"
     >

@@ -8,10 +8,10 @@ interface Props extends Omit<TagData, 'id'> {
 }
 
 export const PostsByTagHeader = (props: Props) => {
-  const { name, posts, subtitle } = props;
+  const { name, posts, subtitle, background } = props;
 
   return (
-    <PostsByQueryHeader posts={posts}>
+    <PostsByQueryHeader background={background} posts={posts}>
       <SubPageHeader title={`TAG: ${name}`} subtitle={subtitle} />
     </PostsByQueryHeader>
   );

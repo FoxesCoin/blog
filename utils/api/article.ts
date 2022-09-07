@@ -7,6 +7,7 @@ export interface ArticleData {
   subtitle: string;
   content: string;
   dateCreate: string;
+  background: string;
 }
 
 const CONTENT_LOREM_IPSUM =
@@ -21,6 +22,7 @@ export const ARTICLES: ArticleData[] = [
     subtitle: 'All new feature in React 18',
     title: 'React 18 feature',
     dateCreate: '2012-12-31 23:59:59',
+    background: '/image/background/article-default.jpg',
   },
   {
     id: 2,
@@ -30,6 +32,7 @@ export const ARTICLES: ArticleData[] = [
     subtitle: 'All new feature in React 18',
     title: 'React 18 feature',
     dateCreate: '2013-12-31 23:59:59',
+    background: '/image/background/article-default.jpg',
   },
   {
     id: 3,
@@ -39,6 +42,7 @@ export const ARTICLES: ArticleData[] = [
     subtitle: 'All new feature in React 18',
     title: 'React 18 feature',
     dateCreate: '2014-12-31 23:59:59',
+    background: '/image/background/article-default.jpg',
   },
   {
     id: 4,
@@ -48,6 +52,7 @@ export const ARTICLES: ArticleData[] = [
     subtitle: 'All new feature in React 18',
     title: 'React 18 feature',
     dateCreate: '2015-12-31 23:59:59',
+    background: '/image/background/article-default.jpg',
   },
   {
     id: 5,
@@ -57,6 +62,7 @@ export const ARTICLES: ArticleData[] = [
     subtitle: 'All new feature in React 18',
     title: 'React 18 feature',
     dateCreate: '2016-12-31 23:59:59',
+    background: '/image/background/article-default.jpg',
   },
   {
     id: 6,
@@ -66,6 +72,7 @@ export const ARTICLES: ArticleData[] = [
     subtitle: 'All new feature in React 18',
     title: 'React 18 feature',
     dateCreate: '2017-12-31 23:59:59',
+    background: '/image/background/article-default.jpg',
   },
   {
     id: 7,
@@ -75,6 +82,7 @@ export const ARTICLES: ArticleData[] = [
     subtitle: 'All new feature in React 18',
     title: 'React 18 feature',
     dateCreate: '2018-12-31 23:59:59',
+    background: '/image/background/article-default.jpg',
   },
   {
     id: 8,
@@ -84,5 +92,6 @@ export const ARTICLES: ArticleData[] = [
     subtitle: 'All new feature in React 18',
     title: 'React 18 feature',
     dateCreate: '2019-12-31 23:59:59',
+    background: '/image/background/article-default.jpg',
   },
 ];

@@ -31,11 +31,11 @@ const Subtitle = styled(Theme.Text)`
 `;
 
 export const ThinArticle = (props: ResponseArticle) => {
-  const { title, tag, subtitle, id, author } = props;
+  const { title, tag, subtitle, id, author, background } = props;
 
   return (
     <Link passHref href={`/posts/${id}`}>
-      <Wrapper>
+      <Wrapper src={background}>
         <Title>{title}</Title>
         <Styled.Tag {...tag} />
         <AuthorLink {...author} />

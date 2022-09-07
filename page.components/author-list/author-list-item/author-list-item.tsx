@@ -6,13 +6,13 @@ import { AuthorListItemStyled as Styled } from './author-list-item.styled';
 import type { AuthorData } from '@utils/api/author';
 
 export const AuthorListItem = (props: AuthorData) => {
-  const { logo, name, surname, description, id } = props;
+  const { logo, name, surname, description, id, background } = props;
 
   const fullName = name + ' ' + surname;
 
   return (
     <Link href={`/posts?author=${id}`}>
-      <Styled.Wrapper>
+      <Styled.Wrapper src={background}>
         <Styled.Logo src={logo} />
         <Styled.Content>
           <Theme.Title fontSize="title">{fullName}</Theme.Title>

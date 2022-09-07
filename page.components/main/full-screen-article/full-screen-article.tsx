@@ -5,11 +5,11 @@ import Link from 'next/link';
 import { FullScreenArticleStyled as Styled } from './full-screen-article.styled';
 
 export const FullScreenArticle = (props: ResponseArticle) => {
-  const { id, tag, title, subtitle } = props;
+  const { id, tag, title, subtitle, background } = props;
 
   return (
     <Link href={`/posts/${id}`}>
-      <Styled.Wrapper>
+      <Styled.Wrapper src={background}>
         <Styled.Content>
           <Theme.GapColumn>
             <Styled.Title>{title}</Styled.Title>

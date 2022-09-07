@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   min-height: 100vh;
   width: 100%;
 
-  background-color: ${COLORS.onyxOpacity};
+  background-color: ${COLORS.black};
 `;
 
 export const Layout: RWrapper = ({ children, className }) => (

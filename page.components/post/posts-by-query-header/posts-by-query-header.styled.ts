@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 import { COLORS } from '@styles/color';
 
-import { cssContent } from '@styles/theme';
+import { cssBackground, cssContent } from '@styles/theme';
 
 export const PostsByQueryHeaderStyled = {
   Wrapper: styled.div`
     min-height: 400px;
     background-color: ${COLORS.deepBlack};
+    ${cssBackground}
   `,
   Content: styled.div`
     ${cssContent}

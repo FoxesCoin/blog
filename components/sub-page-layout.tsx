@@ -3,9 +3,13 @@ import styled from 'styled-components';
 import { Layout } from './layout';
 import { SubPageHeader, SubPageHeaderProps } from './sub-page-header';
 
-import { cssContent } from '@styles/theme';
+import { cssBackground, cssContent } from '@styles/theme';
 
 import { RWrapper } from '@typings/react';
+
+interface Props extends SubPageHeaderProps {
+  background: string;
+}
 
 const StyledLayout = styled(Layout)`
   display: grid;
@@ -17,12 +21,18 @@ const Content = styled.main`
   ${cssContent}
 `;
 
-export const SubPageLayout: RWrapper<SubPageHeaderProps> = (props) => {
-  const { className, children, subtitle, title } = props;
+const BackgroundImage = styled.div`
+  ${cssBackground}
+`;
+
+export const SubPageLayout: RWrapper<Props> = (props) => {
+  const { className, children, subtitle, title, background } = props;
 
   return (
     <StyledLayout>
-      <SubPageHeader title={title} subtitle={subtitle} />
+      <BackgroundImage src={background}>
+        <SubPageHeader title={title} subtitle={subtitle} />
+      </BackgroundImage>
       <Content className={className}>{children}</Content>
     </StyledLayout>
   );

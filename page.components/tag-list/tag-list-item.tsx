@@ -3,16 +3,15 @@ import styled from 'styled-components';
 
 import { COLORS } from '@styles/color';
 
-import { Theme } from '@styles/theme';
+import { cssBackground, Theme } from '@styles/theme';
 
 import type { TagData } from '@utils/api/tag';
 
-const Wrapper = styled(Theme.FlexColumnCenter)<{ background: string }>`
-  background-color: ${COLORS.deepBlack};
-  background-image: url(${(props) => props.background});
-
+const Wrapper = styled(Theme.FlexColumnCenter)`
   gap: 1rem;
   padding: 2rem;
+
+  ${cssBackground}
 
   &,
   & > *:first-child {
@@ -33,7 +32,7 @@ export const TagListItem = (props: TagData) => {
 
   return (
     <Link href={`/posts?tag=${id}`}>
-      <Wrapper background={background}>
+      <Wrapper src={background}>
         <Theme.Title fontSize="title">{name}</Theme.Title>
         <Theme.Title fontSize="subtitle">{subtitle}</Theme.Title>
       </Wrapper>

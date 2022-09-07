@@ -11,10 +11,10 @@ interface Props extends Omit<AuthorData, 'id'> {
 }
 
 export const PostsByAuthorHeader = (props: Props) => {
-  const { name, surname, logo, posts, description } = props;
+  const { name, surname, logo, posts, description, background } = props;
 
   return (
-    <PostsByQueryHeader posts={posts}>
+    <PostsByQueryHeader background={background} posts={posts}>
       <Styled.Wrapper>
         <Styled.Info gap={16}>
           <Styled.Icon src={logo} />

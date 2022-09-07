@@ -22,11 +22,11 @@ const Title = styled(Styled.Title)`
 `;
 
 export const DefaultArticle = (props: ResponseArticle) => {
-  const { title, tag, id, author } = props;
+  const { title, tag, id, author, background } = props;
 
   return (
     <Link passHref href={`/posts/${id}`}>
-      <Styled.Wrapper>
+      <Styled.Wrapper src={background}>
         <Title>{title}</Title>
         <Styled.Tag {...tag} />
         <AuthorLink isAbsolutePosition {...author} />

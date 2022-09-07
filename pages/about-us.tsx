@@ -14,7 +14,11 @@ const StyledLayout = styled(SubPageLayout)`
 
 const AboutUs: NextPage = () => {
   return (
-    <StyledLayout title="ABOUT US" subtitle="Here we start our journey">
+    <StyledLayout
+      background="/image/background/about-us.jpg"
+      title="ABOUT US"
+      subtitle="Here we start our journey"
+    >
       <Head>
         <title>About us</title>
         <meta name="description" content="About us" />

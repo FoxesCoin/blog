@@ -19,11 +19,11 @@ const Tag = styled(Styled.Tag)`
 `;
 
 export const BigArticle = (props: Props) => {
-  const { className, title, tag, subtitle, author, id } = props;
+  const { className, title, tag, subtitle, author, id, background } = props;
 
   return (
     <Link passHref href={`/posts/${id}`}>
-      <Styled.Wrapper className={className}>
+      <Styled.Wrapper src={background} className={className}>
         <Styled.Title>{title}</Styled.Title>
         <Tag {...tag} />
         <Theme.Title fontFamily="thin" fontSize="subtitle">

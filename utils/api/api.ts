@@ -24,6 +24,7 @@ export interface ResponseArticle {
   subtitle: string;
   content: string;
   dateCreate: string;
+  background: string;
 }
 
 const formatArticle = ({

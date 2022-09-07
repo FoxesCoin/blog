@@ -71,3 +71,11 @@ export const cssGridList = css`
   grid-auto-rows: 300px;
   justify-content: center;
 `;
+
+export const cssBackground = css<{ src: string }>`
+  background-color: ${COLORS.deepBlack};
+
+  background-image: url(${(props) => props.src});
+  background-position: center;
+  background-size: cover;
+`;

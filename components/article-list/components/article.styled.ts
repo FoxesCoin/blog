@@ -4,11 +4,13 @@ import { COLORS } from '@styles/color';
 import { FONT_SIZES } from '@styles/font';
 
 import { TagLink } from '@components/tag-link';
-import { Theme } from '@styles/theme';
+import { cssBackground, Theme } from '@styles/theme';
 
-export const cssArticleWrapper = css`
+export const cssArticleWrapper = css<{ src: string }>`
   background-color: ${COLORS.deepBlack};
   position: relative;
+
+  ${cssBackground}
 
   &:hover {
     box-shadow: 0px 0px 5px 5px ${COLORS.deepBlack};

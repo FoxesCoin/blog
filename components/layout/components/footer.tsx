@@ -11,7 +11,7 @@ const Wrapper = styled.footer`
   height: 120px;
 
   background-position: bottom;
-  background-image: url('/footer_background.jpg');
+  background-image: url('/image/background/footer.jpg');
 `;
 
 const SocialLink = styled.a`

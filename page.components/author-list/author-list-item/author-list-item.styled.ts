@@ -2,18 +2,7 @@ import styled from 'styled-components';
 
 import { COLORS } from '@styles/color';
 
-import { cssRound, cssSquare } from '@styles/theme';
-
-const Content = styled.div`
-  background-color: ${COLORS.deepBlack};
-  height: 200px;
-  margin-top: 100px;
-  padding: 75px 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  transition: all 0.3s;
-`;
+import { cssBackground, cssRound, cssSquare } from '@styles/theme';
 
 const Logo = styled.div<{ src: string }>`
   ${cssRound(150)}
@@ -27,12 +16,21 @@ const Logo = styled.div<{ src: string }>`
 `;
 
 export const AuthorListItemStyled = {
-  Content,
   Logo,
+  Content: styled.div`
+    height: 200px;
+    margin-top: 100px;
+    padding: 75px 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: all 0.3s;
+  `,
   Wrapper: styled.div`
     position: relative;
-    background-color: ${COLORS.transparent};
     cursor: pointer;
+
+    ${cssBackground}
 
     ${cssSquare(300)}
 
@@ -41,9 +39,7 @@ export const AuthorListItemStyled = {
         box-shadow: 0px 0px 5px 5px ${COLORS.white};
       }
 
-      & ${Content} {
-        box-shadow: 0px 0px 10px 5px ${COLORS.deepBlack};
-      }
+      box-shadow: 0px 0px 10px 5px ${COLORS.deepBlack};
     }
   `,
 };

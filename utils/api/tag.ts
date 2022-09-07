@@ -9,25 +9,25 @@ export const TAGS: TagData[] = [
   {
     id: 1,
     name: 'HISTORY',
-    background: '',
+    background: '/image/tag/history.jpg',
     subtitle: 'Something about past',
   },
   {
     id: 2,
     name: 'SCIENCE',
-    background: '',
+    background: '/image/tag/science.jpg',
     subtitle: 'Something new in this world',
   },
   {
     id: 3,
     name: 'SPORT',
-    background: '',
+    background: '/image/tag/sport.jpg',
     subtitle: 'All about sport',
   },
   {
     id: 4,
     name: 'TRAVEL',
-    background: '',
+    background: '/image/tag/travel.jpg',
     subtitle: 'Everything that you need to know about where to go next.',
   },
 ];

@@ -3,56 +3,60 @@ export interface AuthorData {
   name: string;
   surname: string;
   description: string;
+  background: string;
   logo: string;
 }
+
+const description =
+  'Sed ut perspiciatis unde omnis iste natus error sit voluptatem';
 
 export const AUTHORS: AuthorData[] = [
   {
     id: 1,
-    description:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo',
+    description,
     name: 'First',
     surname: 'Author',
-    logo: '/image/author/business-man.svg',
+    logo: '/image/author/author_1.svg',
+    background: '/image/author/author_1_background.jpg',
   },
   {
     id: 2,
-    description:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo',
+    description,
     name: 'Third',
     surname: 'Author',
-    logo: '/image/author/business-woman.svg',
+    logo: '/image/author/author_2.svg',
+    background: '/image/author/author_2_background.jpg',
   },
   {
     id: 3,
-    description:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo',
+    description,
     name: 'Second',
     surname: 'Author',
-    logo: '/image/author/business-woman.svg',
+    logo: '/image/author/author_1.svg',
+    background: '/image/author/author_1_background.jpg',
   },
   {
     id: 4,
-    description:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo',
+    description,
     name: 'Fourth',
     surname: 'Author',
-    logo: '/image/author/business-woman.svg',
+    logo: '/image/author/author_2.svg',
+    background: '/image/author/author_2_background.jpg',
   },
   {
     id: 5,
-    description:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo',
+    description,
     name: 'Fifth',
     surname: 'Author',
-    logo: '/image/author/business-woman.svg',
+    logo: '/image/author/author_1.svg',
+    background: '/image/author/author_1_background.jpg',
   },
   {
     id: 6,
-    description:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo',
+    description,
     name: 'Sixth',
     surname: 'Author',
-    logo: '/image/author/business-woman.svg',
+    logo: '/image/author/author_2.svg',
+    background: '/image/author/author_2_background.jpg',
   },
 ];

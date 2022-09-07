@@ -5,7 +5,7 @@ import { TagLink } from '@components/tag-link';
 import { COLORS } from '@styles/color';
 import { FONT_SIZES } from '@styles/font';
 
-import { cssContent, Theme } from '@styles/theme';
+import { cssBackground, cssContent, Theme } from '@styles/theme';
 
 const showTag = keyframes`
 	from {
@@ -52,6 +52,7 @@ export const FullScreenArticleStyled = {
     flex: 0 0 auto;
 
     padding: 14rem 0;
+    ${cssBackground}
   `,
   Content: styled.div`
     ${cssContent}

@@ -23,7 +23,11 @@ const AuthorList: NextPage<Props> = (props) => {
   const { authors } = props;
 
   return (
-    <StyledLayout title="OUT AUTHORS" subtitle="Incredible people">
+    <StyledLayout
+      background="/image/background/author.jpg"
+      title="OUT AUTHORS"
+      subtitle="Incredible people"
+    >
       <Head>
         <title>Author list</title>
         <meta name="description" content="Author list" />
