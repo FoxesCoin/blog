@@ -1,50 +1,50 @@
-import type { GetStaticProps, NextPage } from "next";
-import Head from "next/head";
-import styled from "styled-components";
+import type { GetStaticProps, NextPage } from 'next';
+import Head from 'next/head';
+import styled from 'styled-components';
 
-import { SubPageLayout } from "@components/sub-page-layout";
-import { TagListItem } from "@page.components/tag-list";
+import { SubPageLayout } from '@components/sub-page-layout';
+import { TagListItem } from '@page.components/tag-list';
 
-import { getTags } from "@utils/api";
+import { getTags } from '@utils/api';
 
-import { cssGridList } from "@styles/theme";
+import { cssGridList } from '@styles/theme';
 
-import type { TagData } from "@utils/api/tag";
+import type { TagData } from '@utils/api/tag';
 
 interface Props {
-	tags: TagData[];
+  tags: TagData[];
 }
 
 const StyledLayout = styled(SubPageLayout)`
-	${cssGridList}
+  ${cssGridList}
 `;
 
 const TagList: NextPage<Props> = (props) => {
-	const { tags } = props;
-	return (
-		<StyledLayout
-			title="CATEGORIES"
-			subtitle="Maybe you search for something specific?"
-		>
-			<Head>
-				<title>Tag list</title>
-				<meta name="description" content="Tag list" />
-			</Head>
-			{tags.map((tag) => (
-				<TagListItem key={tag.id} {...tag} />
-			))}
-		</StyledLayout>
-	);
+  const { tags } = props;
+  return (
+    <StyledLayout
+      title="CATEGORIES"
+      subtitle="Maybe you search for something specific?"
+    >
+      <Head>
+        <title>Tag list</title>
+        <meta name="description" content="Tag list" />
+      </Head>
+      {tags.map((tag) => (
+        <TagListItem key={tag.id} {...tag} />
+      ))}
+    </StyledLayout>
+  );
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-	const tags = await getTags();
+  const tags = await getTags();
 
-	return {
-		props: {
-			tags,
-		},
-	};
+  return {
+    props: {
+      tags,
+    },
+  };
 };
 
 export default TagList;

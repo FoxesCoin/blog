@@ -1,1 +1,1 @@
-export * from "./sub-page-header";
+export * from './sub-page-header';

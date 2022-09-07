@@ -43,15 +43,15 @@ export const AuthorLink: RElement<Props> = (props) => {
   const { className, logo, fullName, id, isAbsolutePosition } = props;
 
   return (
-    <Wrapper isAbsolute={!!isAbsolutePosition} className={className}>
-      <Link href={`/posts?author=${id}`}>
+    <Link href={`/posts?author=${id}`}>
+      <Wrapper isAbsolute={!!isAbsolutePosition} className={className}>
         <Theme.GapRow>
           <Logo src={logo} />
           <Text fontFamily="thin" fontSize="small">
             {fullName}
           </Text>
         </Theme.GapRow>
-      </Link>
-    </Wrapper>
+      </Wrapper>
+    </Link>
   );
 };

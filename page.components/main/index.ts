@@ -1,1 +1,1 @@
-export * from "./full-screen-preview-article";
+export * from './full-screen-preview-article';

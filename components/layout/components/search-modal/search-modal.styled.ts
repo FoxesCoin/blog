@@ -6,18 +6,16 @@ import { COLORS } from '@styles/color';
 import { Z_INDEX } from '@styles/z-index';
 
 export const SearchModalStyled = {
-  Wrapper: styled.div<{ isOpen: boolean }>`
+  Wrapper: styled.div`
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
 
-    transition: all 0.4s;
-    transform: translateX(${(props) => (props.isOpen ? 0 : '-100%')});
-
     background-color: ${COLORS.deepBlack};
     z-index: ${Z_INDEX.modal};
+    animation-fill-mode: both;
   `,
   Content: styled.div`
     ${cssContent}

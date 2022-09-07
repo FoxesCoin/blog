@@ -1,22 +1,22 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { Footer, Header } from "./components";
+import { Footer, Header } from './components';
 
-import { COLORS } from "@styles/color";
+import { COLORS } from '@styles/color';
 
-import { RWrapper } from "@typings/react";
+import { RWrapper } from '@typings/react';
 
 const Wrapper = styled.div`
-	min-height: 100vh;
-	width: 100%;
+  min-height: 100vh;
+  width: 100%;
 
-	background-color: ${COLORS.onyxOpacity};
+  background-color: ${COLORS.onyxOpacity};
 `;
 
 export const Layout: RWrapper = ({ children, className }) => (
-	<Wrapper className={className}>
-		<Header />
-		{children}
-		<Footer />
-	</Wrapper>
+  <Wrapper className={className}>
+    <Header />
+    {children}
+    <Footer />
+  </Wrapper>
 );
