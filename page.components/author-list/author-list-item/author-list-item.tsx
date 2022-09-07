@@ -1,21 +1,24 @@
-import { Theme } from "@styles/theme";
-import { AuthorListItemStyled as Styled } from "./author-list-item.styled";
+import Link from 'next/link';
 
-import type { RElement } from "@typings/react";
-import type { AuthorData } from "@utils/api/author";
+import { Theme } from '@styles/theme';
+import { AuthorListItemStyled as Styled } from './author-list-item.styled';
 
-export const AuthorListItem: RElement<AuthorData> = (props) => {
-	const { className, logo, name, surname, description } = props;
+import type { AuthorData } from '@utils/api/author';
 
-	const fullName = name + " " + surname;
+export const AuthorListItem = (props: AuthorData) => {
+  const { logo, name, surname, description, id } = props;
 
-	return (
-		<Styled.Wrapper className={className}>
-			<Styled.Logo src={logo} />
-			<Styled.Content>
-				<Theme.Title fontSize="title">{fullName}</Theme.Title>
-				<Theme.Title fontSize="subtitle">{description}</Theme.Title>
-			</Styled.Content>
-		</Styled.Wrapper>
-	);
+  const fullName = name + ' ' + surname;
+
+  return (
+    <Link href={`/posts?author=${id}`}>
+      <Styled.Wrapper>
+        <Styled.Logo src={logo} />
+        <Styled.Content>
+          <Theme.Title fontSize="title">{fullName}</Theme.Title>
+          <Theme.Title fontSize="subtitle">{description}</Theme.Title>
+        </Styled.Content>
+      </Styled.Wrapper>
+    </Link>
+  );
 };

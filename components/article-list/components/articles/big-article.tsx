@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-import { ArticleAuthorLink } from "../article-author-link";
+import { AuthorLink } from "@components/author-link";
 
 import { COLORS } from "@styles/color";
 
@@ -26,9 +26,10 @@ export const BigArticle = (props: Props) => {
 			<Styled.Wrapper className={className}>
 				<Styled.Title>{title}</Styled.Title>
 				<Tag {...tag} />
-				<Theme.Title fontSize="subtitle">{subtitle}</Theme.Title>
-
-				<ArticleAuthorLink {...author} />
+				<Theme.Title fontFamily="thin" fontSize="subtitle">
+					{subtitle}
+				</Theme.Title>
+				<AuthorLink isAbsolutePosition {...author} />
 			</Styled.Wrapper>
 		</Link>
 	);

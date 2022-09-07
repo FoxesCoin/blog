@@ -1,15 +1,9 @@
 import styled from "styled-components";
 
-import { COLORS } from "@styles/color";
-
 import { MEDIA } from "@styles/media";
 import { cssContent } from "@styles/theme";
 
 export const ArticleListStyled = {
-	Wrapper: styled.div`
-		background-color: ${COLORS.onyx};
-		padding: 4rem 0;
-	`,
 	Content: styled.main`
 		${cssContent}
 		display: grid;

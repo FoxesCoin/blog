@@ -5,7 +5,7 @@ export default function Document() {
 		<Html>
 			<Head>
 				<link
-					href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap"
+					href="https://fonts.googleapis.com/css2?family=Oswald&family=Raleway&display=swap"
 					rel="stylesheet"
 				/>
 				<link rel="icon" href="/favicon.ico" />

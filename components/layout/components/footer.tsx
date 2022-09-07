@@ -39,7 +39,7 @@ const Link = styled.a`
 	}
 `;
 
-const Content = styled(Theme.FlexLine)`
+const Content = styled(Theme.FlexCentredLine)`
 	height: 100%;
 
 	${cssContent}

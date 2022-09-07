@@ -2,7 +2,6 @@ import { ArticleListStyled as Styled } from "./article-list.styled";
 
 import { BigArticle, DefaultArticle, ThinArticle } from "./components";
 
-import type { RElement } from "@typings/react";
 import type { ResponseArticle } from "@utils/api";
 
 interface Props {
@@ -20,12 +19,8 @@ const parseArticle = (article: ResponseArticle, index: number) => {
 	}
 };
 
-export const ArticleList: RElement<Props> = (props) => {
-	const { className, articles } = props;
+export const ArticleList = (props: Props) => {
+	const { articles } = props;
 
-	return (
-		<Styled.Wrapper className={className}>
-			<Styled.Content>{articles.map(parseArticle)}</Styled.Content>
-		</Styled.Wrapper>
-	);
+	return <Styled.Content>{articles.map(parseArticle)}</Styled.Content>;
 };

@@ -1,36 +1,47 @@
-import Link from "next/link";
-import styled from "styled-components";
+import Link from 'next/link';
+import styled from 'styled-components';
 
-import { COLORS } from "@styles/color";
+import { COLORS } from '@styles/color';
 
-import { FontSize } from "@styles/font-size";
-import { RElement } from "@typings/react";
+import { cssTypography, Typography } from '@styles/theme';
+import { RElement } from '@typings/react';
 
-interface Props {
-	href: string;
-	text: string;
-
-	fontSize?: FontSize;
+interface Props extends Typography {
+  href: string;
+  text: string;
 }
 
-const Text = styled.span<{ fontSize: FontSize }>`
-	transition: all 0.2s;
-	cursor: pointer;
-	font-size: ${(props) => props.fontSize};
+const Text = styled.span<Typography>`
+  transition: all 0.2s;
+  cursor: pointer;
 
-	&:hover {
-		color: ${COLORS.camel};
-	}
+  ${cssTypography}
+
+  &:hover {
+    color: ${COLORS.camel};
+  }
 `;
 
 export const StyledLink: RElement<Props> = (props) => {
-	const { className, href, text, fontSize = "small" } = props;
+  const {
+    className,
+    href,
+    text,
+    fontSize = 'small',
+    fontFamily,
+    color,
+  } = props;
 
-	return (
-		<Link href={href}>
-			<Text className={className} fontSize={fontSize}>
-				{text}
-			</Text>
-		</Link>
-	);
+  return (
+    <Link href={href}>
+      <Text
+        className={className}
+        fontSize={fontSize}
+        fontFamily={fontFamily}
+        color={color}
+      >
+        {text}
+      </Text>
+    </Link>
+  );
 };

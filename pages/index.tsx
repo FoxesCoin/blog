@@ -1,47 +1,48 @@
-import type { GetStaticProps, NextPage } from "next";
-import Head from "next/head";
-import styled from "styled-components";
+import type { GetStaticProps, NextPage } from 'next';
+import Head from 'next/head';
+import styled from 'styled-components';
 
-import { ArticleList } from "@components/article-list";
-import { Layout } from "@components/layout";
+import { ArticleList } from '@components/article-list';
+import { Layout } from '@components/layout';
+import { FullScreenPreviewArticle } from '@page.components/main';
 
-import { getArticles, ResponseArticle } from "@utils/api";
+import { getArticles, getTopArticles, ResponseArticle } from '@utils/api';
 
-import { cssFlexCenter, Theme } from "@styles/theme";
-
-const Wrapper = styled.div`
-	${cssFlexCenter}
-
-	width: 100%;
-	height: 100vh;
+const StyledLayout = styled(Layout)`
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  row-gap: 2rem;
 `;
 
 interface Props {
-	articles: ResponseArticle[];
+  articles: ResponseArticle[];
+  topArticles: ResponseArticle[];
 }
 
 const Home: NextPage<Props> = (props) => (
-	<Layout>
-		<Head>
-			<title>Small blog</title>
-			<meta name="description" content="Small blog" />
-		</Head>
-		<Wrapper>
-			<Theme.Text fontSize="title">Welcome to blog!</Theme.Text>
-		</Wrapper>
+  <StyledLayout>
+    <Head>
+      <title>Small blog</title>
+      <meta name="description" content="Small blog" />
+    </Head>
+    <FullScreenPreviewArticle articles={props.topArticles} />
 
-		<ArticleList articles={props.articles} />
-	</Layout>
+    <ArticleList articles={props.articles} />
+  </StyledLayout>
 );
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-	const articles = await getArticles();
+  const [articles, topArticles] = await Promise.all([
+    getArticles(),
+    getTopArticles(),
+  ]);
 
-	return {
-		props: {
-			articles,
-		},
-	};
+  return {
+    props: {
+      articles,
+      topArticles,
+    },
+  };
 };
 
 export default Home;

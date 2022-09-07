@@ -1,10 +1,10 @@
 import styled, { css } from "styled-components";
 
 import { COLORS } from "@styles/color";
-import { FONT_SIZES } from "@styles/font-size";
+import { FONT_SIZES } from "@styles/font";
 
+import { TagLink } from "@components/tag-link";
 import { Theme } from "@styles/theme";
-import { ArticleTagLink } from "./article-tag-link";
 
 export const cssArticleWrapper = css`
 	background-color: ${COLORS.deepBlack};
@@ -25,7 +25,7 @@ export const ArticleStyled = {
 		font-size: ${FONT_SIZES.header};
 	`,
 
-	Tag: styled(ArticleTagLink)`
+	Tag: styled(TagLink)`
 		text-transform: uppercase;
 		font-size: ${FONT_SIZES.subtitle};
 		margin-top: 1rem;

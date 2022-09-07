@@ -1,12 +1,13 @@
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
+import styled from "styled-components";
 
 import { SubPageLayout } from "@components/sub-page-layout";
 import { TagListItem } from "@page.components/tag-list";
 
 import { getTags } from "@utils/api";
 
-import { Theme } from "@styles/theme";
+import { cssGridList } from "@styles/theme";
 
 import type { TagData } from "@utils/api/tag";
 
@@ -14,10 +15,14 @@ interface Props {
 	tags: TagData[];
 }
 
+const StyledLayout = styled(SubPageLayout)`
+	${cssGridList}
+`;
+
 const TagList: NextPage<Props> = (props) => {
 	const { tags } = props;
 	return (
-		<SubPageLayout
+		<StyledLayout
 			title="CATEGORIES"
 			subtitle="Maybe you search for something specific?"
 		>
@@ -25,12 +30,10 @@ const TagList: NextPage<Props> = (props) => {
 				<title>Tag list</title>
 				<meta name="description" content="Tag list" />
 			</Head>
-			<Theme.Grid>
-				{tags.map((tag) => (
-					<TagListItem key={tag.id} {...tag} />
-				))}
-			</Theme.Grid>
-		</SubPageLayout>
+			{tags.map((tag) => (
+				<TagListItem key={tag.id} {...tag} />
+			))}
+		</StyledLayout>
 	);
 };
 

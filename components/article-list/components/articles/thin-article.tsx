@@ -1,14 +1,14 @@
 import Link from "next/link";
 import styled from "styled-components";
 
+import { AuthorLink } from "@components/author-link";
+
+import { COLORS } from "@styles/color";
+
 import { Theme } from "@styles/theme";
 import { ArticleStyled as Styled, cssArticleWrapper } from "../article.styled";
 
-import { COLORS } from "@styles/color";
 import type { ResponseArticle } from "@utils/api";
-import { ArticleAuthorLink } from "../article-author-link";
-
-type Props = ResponseArticle;
 
 const Wrapper = styled.div`
 	${cssArticleWrapper}
@@ -26,15 +26,11 @@ const Title = styled(Theme.Paragraph)`
 	border-left: 2px solid ${COLORS.camel};
 `;
 
-const AuthorLink = styled(ArticleAuthorLink)`
-	position: static;
-`;
-
 const Subtitle = styled(Theme.Text)`
 	align-self: flex-end;
 `;
 
-export const ThinArticle = (props: Props) => {
+export const ThinArticle = (props: ResponseArticle) => {
 	const { title, tag, subtitle, id, author } = props;
 
 	return (
@@ -43,7 +39,9 @@ export const ThinArticle = (props: Props) => {
 				<Title>{title}</Title>
 				<Styled.Tag {...tag} />
 				<AuthorLink {...author} />
-				<Subtitle fontSize="subtitle">{subtitle}</Subtitle>
+				<Subtitle fontFamily="thin" fontSize="subtitle">
+					{subtitle}
+				</Subtitle>
 			</Wrapper>
 		</Link>
 	);

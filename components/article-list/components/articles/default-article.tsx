@@ -1,12 +1,13 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-import { ArticleAuthorLink } from "../article-author-link";
+import { AuthorLink } from "@components/author-link";
 
 import { COLORS } from "@styles/color";
 
-import type { ResponseArticle } from "@utils/api";
 import { ArticleStyled as Styled } from "../article.styled";
+
+import type { ResponseArticle } from "@utils/api";
 
 const Title = styled(Styled.Title)`
 	&::before {
@@ -28,8 +29,7 @@ export const DefaultArticle = (props: ResponseArticle) => {
 			<Styled.Wrapper>
 				<Title>{title}</Title>
 				<Styled.Tag {...tag} />
-
-				<ArticleAuthorLink {...author} />
+				<AuthorLink isAbsolutePosition {...author} />
 			</Styled.Wrapper>
 		</Link>
 	);

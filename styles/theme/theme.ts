@@ -1,80 +1,71 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 import {
-	cssFlexCenter,
-	cssFullSize,
-	cssGap,
-	cssText,
-	Typography,
-} from "./theme.preset";
+  cssFlexCenter,
+  cssGap,
+  cssTypography,
+  Typography,
+} from './theme.preset';
 
-const showCursor = (props: any) => (props.onClick ? "cursor: pointer;" : "");
+const showCursor = (props: any) => (props.onClick ? 'cursor: pointer;' : '');
 
 export const Theme = {
-	Paragraph: styled.p<Typography>`
-		${showCursor}
-		${cssText}
-	`,
-	Text: styled.span<Typography>`
-		${showCursor}
-		${cssText}
-	`,
-	Title: styled.p<Typography>`
-		${showCursor}
-		${cssText}
+  Paragraph: styled.p<Typography>`
+    ${showCursor}
+    ${cssTypography}
+  `,
+  Text: styled.span<Typography>`
+    ${showCursor}
+    ${cssTypography}
+  `,
+  Title: styled.p<Typography>`
+    ${showCursor}
+    ${cssTypography}
     text-align: center;
-		width: 100%;
-	`,
-	FlexLine: styled.div`
-		${showCursor}
+    width: 100%;
+  `,
+  FlexLine: styled.div`
+    ${showCursor}
+    ${cssGap}
 		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	`,
-	FlexColumn: styled.div`
-		${showCursor}
+    justify-content: space-between;
+  `,
+  FlexCentredLine: styled.div`
+    ${showCursor}
+    ${cssGap}
 		display: flex;
-		justify-content: space-between;
-		flex-direction: column;
-	`,
-	GapRow: styled.div`
-		${showCursor}
-		${cssGap}
-    display: flex;
-		align-items: center;
-	`,
-	GapColumn: styled.div`
-		${showCursor}
-		${cssGap}
-    display: flex;
-		justify-content: center;
-		flex-direction: column;
-	`,
-	FlexCenter: styled.div`
-		${showCursor}
-		${cssFlexCenter}
-	`,
-	FlexColumnCenter: styled.div`
-		${showCursor}
-		${cssFlexCenter}
+    align-items: center;
+    justify-content: space-between;
+  `,
+
+  FlexColumn: styled.div`
+    ${showCursor}
+    ${cssGap}
+		display: flex;
+    justify-content: space-between;
     flex-direction: column;
-	`,
-	FullScreen: styled.div`
-		${showCursor}
-		${cssFullSize}
-	`,
-	FullScreenCenter: styled.div`
-		${showCursor}
-		${cssFlexCenter}
-    ${cssFullSize}
+  `,
+  FlexColumnCenter: styled.div`
+    ${showCursor}
+    ${cssFlexCenter}
     flex-direction: column;
-	`,
-	Grid: styled.main`
-		display: grid;
-		row-gap: 3rem;
-		column-gap: 2rem;
-		grid-template-columns: repeat(auto-fit, 300px);
-		grid-auto-rows: 300px;
-		justify-content: center;
-	`,
+  `,
+
+  GapRow: styled.div`
+    ${showCursor}
+    ${cssGap}
+    display: flex;
+    align-items: center;
+  `,
+  GapColumn: styled.div`
+    ${showCursor}
+    ${cssGap}
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  `,
+  FlexCenter: styled.div`
+    ${showCursor}
+    ${cssFlexCenter}
+  `,
 };
