@@ -6,7 +6,7 @@ import { Z_INDEX } from '@styles/z-index';
 import { cssContent, cssSquare } from '@styles/theme';
 
 export const HeaderStyled = {
-  Wrapper: styled.header<{ isSticky: boolean }>`
+  Wrapper: styled.header`
     top: 0;
     position: absolute;
     width: 100%;
